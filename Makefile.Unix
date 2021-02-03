@@ -6,10 +6,10 @@ CFLAGS = -g $(GL_INCLUDE)
 LIBS = -lGL -lglut -lGLEW -lm
 
 triangle: triangle.o
-	$(CC) -o triangle $^ -L$(GL_LIB) triangle.c $(LIBS)
+	gcc -o triangle $^ -L$(GL_LIB) triangle.c $(LIBS)
 
 .c.o:
-    $(CC) -c -o $@ $< -I$(GL_INCLUDE)
+    gcc -c -o $@ $< -I$(GL_INCLUDE)
 
 clean:
     rm -f triangle.o
